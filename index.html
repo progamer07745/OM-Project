@@ -1,121 +1,264 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#1a2332" />
-  <meta name="description" content="OM Programming Lab — track projects, backlog, and tasks. No database: everything is saved in your browser." />
-  <title>OM Programming Lab</title>
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="splash" id="splash" aria-hidden="true">
-    <p class="splash-text">Mohamed And Omar WEB community</p>
-    <div class="splash-loader" aria-hidden="true"></div>
-  </div>
-
-  <header class="app-header" role="banner">
-    <div class="logo">
-      <span class="logo-om" aria-hidden="true">OM</span>
-      <h1>Programming Lab</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a2332" />
+    <meta
+      name="description"
+      content="OM Programming Lab — track projects, backlog, and tasks. No database: everything is saved in your browser."
+    />
+    <title>OM Programming Lab</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="splash" id="splash" aria-hidden="true">
+      <p class="splash-text">Mohamed And Omar WEB community</p>
+      <div class="splash-loader" aria-hidden="true"></div>
     </div>
-    <div class="header-right">
-      <div class="presence" id="presence" aria-live="polite"></div>
-      <div class="user-switcher" role="group" aria-label="Who is using the app">
-        <span class="user-label">I am</span>
-        <button type="button" class="btn-user active" data-user="mohamed" id="btn-mohamed" aria-pressed="true">Mohamed</button>
-        <button type="button" class="btn-user" data-user="omar" id="btn-omar" aria-pressed="false">Omar</button>
+
+    <header class="app-header" role="banner">
+      <div class="logo">
+        <span class="logo-om" aria-hidden="true">OM</span>
+        <h1>Programming Lab</h1>
       </div>
-    </div>
-  </header>
-
-  <main class="dashboard" id="main-content" role="main">
-    <div class="dashboard-row dashboard-row--projects">
-      <section class="panel panel-done" aria-labelledby="done-heading">
-        <h2 id="done-heading">Projects We've Done</h2>
-        <p class="panel-hint">Completed projects</p>
-        <div class="add-row">
-          <label for="done-input" class="visually-hidden">Add completed project</label>
-          <input type="text" id="done-input" placeholder="Add completed project..." autocomplete="off" />
-          <button type="button" class="btn-add" id="done-add" title="Add" aria-label="Add">+</button>
+      <div class="header-right">
+        <div class="presence" id="presence" aria-live="polite"></div>
+        <div
+          class="user-switcher"
+          role="group"
+          aria-label="Who is using the app"
+        >
+          <span class="user-label">I am</span>
+          <button
+            type="button"
+            class="btn-user active"
+            data-user="mohamed"
+            id="btn-mohamed"
+            aria-pressed="true"
+          >
+            Mohamed
+          </button>
+          <button
+            type="button"
+            class="btn-user"
+            data-user="omar"
+            id="btn-omar"
+            aria-pressed="false"
+          >
+            Omar
+          </button>
         </div>
-        <ul class="list" id="done-list" aria-label="Completed projects list"></ul>
-      </section>
+      </div>
+    </header>
 
-      <section class="panel panel-todo" aria-labelledby="todo-heading">
-        <h2 id="todo-heading">Things We Need to Make</h2>
-        <p class="panel-hint">Backlog / to build</p>
-        <div class="add-row">
-          <label for="todo-input" class="visually-hidden">Add thing to make</label>
-          <input type="text" id="todo-input" placeholder="Add thing to make..." autocomplete="off" />
-          <button type="button" class="btn-add" id="todo-add" title="Add" aria-label="Add">+</button>
-        </div>
-        <ul class="list" id="todo-list" aria-label="Backlog list"></ul>
-      </section>
+    <main class="dashboard" id="main-content" role="main">
+      <div class="dashboard-row dashboard-row--projects">
+        <section class="panel panel-done" aria-labelledby="done-heading">
+          <h2 id="done-heading">Projects We've Done</h2>
+          <p class="panel-hint">Completed projects</p>
+          <div class="add-row">
+            <label for="done-input" class="visually-hidden"
+              >Add completed project</label
+            >
+            <input
+              type="text"
+              id="done-input"
+              placeholder="Add completed project..."
+              autocomplete="off"
+            />
+            <button
+              type="button"
+              class="btn-add"
+              id="done-add"
+              title="Add"
+              aria-label="Add"
+            >
+              +
+            </button>
+          </div>
+          <ul
+            class="list"
+            id="done-list"
+            aria-label="Completed projects list"
+          ></ul>
+        </section>
 
-      <section class="panel panel-current" aria-labelledby="current-heading">
-        <h2 id="current-heading">Project We're Working On</h2>
-        <p class="panel-hint">Current project + progress</p>
-        <div class="current-form">
-          <label for="current-name" class="visually-hidden">Project name</label>
-          <input type="text" id="current-name" placeholder="Project name..." autocomplete="off" />
-          <div class="progress-wrap">
-            <label for="progress-slider">Progress: <span id="progress-value">0</span>%</label>
-            <input type="range" id="progress-slider" min="0" max="100" value="0" aria-valuetext="0 percent" />
-            <div class="progress-bar" aria-hidden="true">
-              <div class="progress-fill" id="progress-fill"></div>
+        <section class="panel panel-todo" aria-labelledby="todo-heading">
+          <h2 id="todo-heading">Things We Need to Make</h2>
+          <p class="panel-hint">Backlog / to build</p>
+          <div class="add-row">
+            <label for="todo-input" class="visually-hidden"
+              >Add thing to make</label
+            >
+            <input
+              type="text"
+              id="todo-input"
+              placeholder="Add thing to make..."
+              autocomplete="off"
+            />
+            <button
+              type="button"
+              class="btn-add"
+              id="todo-add"
+              title="Add"
+              aria-label="Add"
+            >
+              +
+            </button>
+          </div>
+          <ul class="list" id="todo-list" aria-label="Backlog list"></ul>
+        </section>
+
+        <section class="panel panel-current" aria-labelledby="current-heading">
+          <h2 id="current-heading">Project We're Working On</h2>
+          <p class="panel-hint">Current project + progress</p>
+          <div class="current-form">
+            <label for="current-name" class="visually-hidden"
+              >Project name</label
+            >
+            <input
+              type="text"
+              id="current-name"
+              placeholder="Project name..."
+              autocomplete="off"
+            />
+            <div class="progress-wrap">
+              <label for="progress-slider"
+                >Progress: <span id="progress-value">0</span>%</label
+              >
+              <input
+                type="range"
+                id="progress-slider"
+                min="0"
+                max="100"
+                value="0"
+                aria-valuetext="0 percent"
+              />
+              <div class="progress-bar" aria-hidden="true">
+                <div class="progress-fill" id="progress-fill"></div>
+              </div>
             </div>
+            <button type="button" class="btn-set-current" id="set-current">
+              Set as current
+            </button>
           </div>
-          <button type="button" class="btn-set-current" id="set-current">Set as current</button>
-        </div>
-        <div class="current-display" id="current-display">
-          <p class="current-name-display" id="current-name-display">— No current project —</p>
-          <div class="progress-bar big" aria-hidden="true">
-            <div class="progress-fill" id="current-progress-fill"></div>
+          <div class="current-display" id="current-display">
+            <p class="current-name-display" id="current-name-display">
+              — No current project —
+            </p>
+            <div class="progress-bar big" aria-hidden="true">
+              <div class="progress-fill" id="current-progress-fill"></div>
+            </div>
+            <p class="progress-label" id="current-progress-label">0%</p>
           </div>
-          <p class="progress-label" id="current-progress-label">0%</p>
-        </div>
-      </section>
-    </div>
-
-    <section class="panel panel-github full-width" aria-labelledby="github-heading">
-      <h2 id="github-heading">Done projects on GitHub</h2>
-      <p class="panel-hint">Add completed projects that are on GitHub — view the code and mark if you have permission to change it</p>
-      <div class="github-add">
-        <label for="github-name" class="visually-hidden">Project name</label>
-        <input type="text" id="github-name" placeholder="Project name..." autocomplete="off" />
-        <label for="github-url" class="visually-hidden">GitHub repo URL</label>
-        <input type="url" id="github-url" placeholder="GitHub repo URL (e.g. https://github.com/user/repo)" autocomplete="off" />
-        <button type="button" class="btn-add" id="github-add" title="Add" aria-label="Add GitHub project">+</button>
+        </section>
       </div>
-      <ul class="list list-github" id="github-list" aria-label="GitHub projects list"></ul>
-    </section>
 
-    <div class="dashboard-row dashboard-row--tasks">
-      <section class="panel panel-tasks full-width" aria-labelledby="tasks-for-heading">
-        <h2 id="tasks-for-heading">Tasks for <span id="other-name">Omar</span></h2>
-        <p class="panel-hint">Tasks you assign to your partner (they see these when they open the app)</p>
-        <div class="add-row">
-          <label for="task-for-other-input" class="visually-hidden">Add a task for your partner</label>
-          <input type="text" id="task-for-other-input" placeholder="Add a task for your partner..." autocomplete="off" />
-          <button type="button" class="btn-add" id="task-for-other-add" title="Add" aria-label="Add">+</button>
+      <section
+        class="panel panel-github full-width"
+        aria-labelledby="github-heading"
+      >
+        <h2 id="github-heading">Done projects on GitHub</h2>
+        <p class="panel-hint">
+          Add completed projects that are on GitHub — view the code and mark if
+          you have permission to change it
+        </p>
+        <div class="github-add">
+          <label for="github-name" class="visually-hidden">Project name</label>
+          <input
+            type="text"
+            id="github-name"
+            placeholder="Project name..."
+            autocomplete="off"
+          />
+          <label for="github-url" class="visually-hidden"
+            >GitHub repo URL</label
+          >
+          <input
+            type="url"
+            id="github-url"
+            placeholder="GitHub repo URL (e.g. https://github.com/user/repo)"
+            autocomplete="off"
+          />
+          <button
+            type="button"
+            class="btn-add"
+            id="github-add"
+            title="Add"
+            aria-label="Add GitHub project"
+          >
+            +
+          </button>
         </div>
-        <ul class="list" id="tasks-for-other-list" aria-label="Tasks for partner"></ul>
+        <ul
+          class="list list-github"
+          id="github-list"
+          aria-label="GitHub projects list"
+        ></ul>
       </section>
-      <section class="panel panel-tasks full-width" aria-labelledby="tasks-from-heading">
-        <h2 id="tasks-from-heading">Tasks <span id="other-name-from">Omar</span> gave me</h2>
-        <p class="panel-hint">Tasks your partner assigned to you</p>
-        <ul class="list" id="tasks-for-me-list" aria-label="Tasks from partner"></ul>
-      </section>
-    </div>
-  </main>
 
-  <script src="app.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js').catch(function() {});
-    }
-  </script>
-</body>
+      <div class="dashboard-row dashboard-row--tasks">
+        <section
+          class="panel panel-tasks full-width"
+          aria-labelledby="tasks-for-heading"
+        >
+          <h2 id="tasks-for-heading">
+            Tasks for <span id="other-name">Omar</span>
+          </h2>
+          <p class="panel-hint">
+            Tasks you assign to your partner (they see these when they open the
+            app)
+          </p>
+          <div class="add-row">
+            <label for="task-for-other-input" class="visually-hidden"
+              >Add a task for your partner</label
+            >
+            <input
+              type="text"
+              id="task-for-other-input"
+              placeholder="Add a task for your partner..."
+              autocomplete="off"
+            />
+            <button
+              type="button"
+              class="btn-add"
+              id="task-for-other-add"
+              title="Add"
+              aria-label="Add"
+            >
+              +
+            </button>
+          </div>
+          <ul
+            class="list"
+            id="tasks-for-other-list"
+            aria-label="Tasks for partner"
+          ></ul>
+        </section>
+        <section
+          class="panel panel-tasks full-width"
+          aria-labelledby="tasks-from-heading"
+        >
+          <h2 id="tasks-from-heading">
+            Tasks <span id="other-name-from">Omar</span> gave me
+          </h2>
+          <p class="panel-hint">Tasks your partner assigned to you</p>
+          <ul
+            class="list"
+            id="tasks-for-me-list"
+            aria-label="Tasks from partner"
+          ></ul>
+        </section>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js").catch(function () {});
+      }
+    </script>
+  </body>
 </html>

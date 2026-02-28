@@ -1,1 +1,29 @@
-{"name":"OM Programming Lab","short_name":"OM Lab","description":"Track projects, backlog, and tasks — Mohamed and Omar","start_url":".","display":"standalone","background_color":"#0f1419","theme_color":"#1a2332","icons":[{"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},{"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},{"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}]}
+{
+  "name": "OM Programming Lab",
+  "short_name": "OM Lab",
+  "description": "Track projects, backlog, and tasks — Mohamed and Omar",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f1419",
+  "theme_color": "#1a2332",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
