@@ -1,0 +1,10 @@
+{
+  "name": "om-programming-lab",
+  "version": "1.0.0",
+  "description": "Web app for tracking projects, backlog, and current work — Mohamed and Omar",
+  "author": "OM Programming Lab",
+  "scripts": {
+    "start": "npx --yes serve \"om programming lab\" -p 3000",
+    "open": "start http://localhost:3000"
+  }
+}

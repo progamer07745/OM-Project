@@ -1,0 +1,61 @@
+# =========================
+# Node / Frontend projects
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+.out/
+.next/
+.vite/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# =========================
+# OS junk
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Editor / IDE
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Misc
+# =========================
+coverage/
+.cache/
+temp/
+
+
+# =========================
+# Node.js binaries (FORBIDDEN)
+# =========================
+node.exe
+npm
+npm.cmd
+npm.ps1
+npx
+npx.cmd
+npx.ps1
+corepack
+corepack.cmd
